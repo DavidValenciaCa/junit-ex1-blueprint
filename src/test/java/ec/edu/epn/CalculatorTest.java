@@ -145,4 +145,22 @@ class CalculatorTest {
         assertEquals(5.5, result, 0.0001, "The division result should be approximately 5.5");
         // Aqui el parametro de tolerancia es 0.0001
     }
+
+    @Test
+    void divide_TwoNumbersPositive_ReturnsCorrectQuotient() {
+        // Arrange
+        int a = 20;
+        int b = 4;
+        double expected = 5.0;
+
+        // Act
+        double result = calculator.divide(a, b);
+
+        // Assert
+        assertAll(
+                () -> assertEquals(expected, result),
+                () -> assertTrue(result > 0)
+        );
+    }
+
 }
